@@ -1,6 +1,18 @@
 {
   "name": "silverwingmotors",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+
+    }
+
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix", "git add"
+    ]
+  },
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -16,6 +28,7 @@
   },
   "dependencies": {
     "handlebars": "^4.7.8",
+    "husky": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.69.5"
