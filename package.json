@@ -4,13 +4,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-
     }
-
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix", "git add"
+      "eslint --fix",
+      "cross-env CI=true && npm run test --bail --findRelatedTests",
+      "git add"
     ]
   },
   "version": "0.0.0",
@@ -27,6 +27,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "handlebars": "^4.7.8",
     "husky": "^8.0.3",
     "react": "^18.2.0",
